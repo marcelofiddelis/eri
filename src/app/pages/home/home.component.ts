@@ -80,6 +80,7 @@ export class HomeComponent implements OnInit {
 
 	private addNewObject(item: ItemModel): void {
 		this.itemList.push(item);
+		
 	}
 
 	public onExit():void {

@@ -9,10 +9,18 @@
 
 	<div id="item-picture">
 		<img mat-card-image [src]="itemData.picture" alt="Item photo">
+		
 	</div>
 
 	<mat-card-footer>
 		<span>Encontrado em: <b>{{ itemData.findAt }}</b></span>
 		<span>{{ itemData.date | date:"dd/MM/YYYY" }}</span>
+		@if (itemData.status === 'Retirado') {
+			<button mat-flat-button class='contestar' (click)="aguardar()">Contestar</button>
+		}@else{
+			<button mat-flat-button class='retirar' (click)="retirar()">Retirar</button>
+
+		}
+		
 	</mat-card-footer>
 </mat-card>

@@ -54,7 +54,7 @@ export class NewObjectComponent implements OnInit {
 		// console.log((event as any).target.files[0]);
 
 		this.pictureSelected = await convertFileToBase64((event as any).target.files[0]);
-		console.log(this.pictureSelected)
+		
 	}
 
 	public onClickCloseComponent(): void {

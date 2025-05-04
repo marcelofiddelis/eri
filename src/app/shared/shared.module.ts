@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { CardItemComponent } from './components/card-item/card-item.component';
+import { MatButton, MatButtonModule } from '@angular/material/button';
 
 @NgModule({
 	declarations: [
@@ -20,6 +21,8 @@ import { CardItemComponent } from './components/card-item/card-item.component';
 		MatListModule,
 		MatIconModule,
 		MatCardModule,
+		MatButtonModule,
+        MatButton,
 	],
 	exports: [
 		SideMenuComponent,
