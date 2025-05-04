@@ -13,12 +13,8 @@
 
 		<mat-form-field appearance="outline" floatLabel="always">
 			<mat-label>Local</mat-label>
-			<mat-select formControlName="findAt" placeholder="Insira o local no qual o objeto foi encontrado">
-				@for (local of locationsList; track local.label) {
-					<mat-option [value]="local.value">{{ local.label }}</mat-option>
-				}
-			</mat-select>
-			<mat-icon matPrefix>person_outline</mat-icon>
+			<mat-label>Objeto</mat-label>
+			<input matInput formControlName="findAt" placeholder="Insira o local do objeto encontrado">
 		</mat-form-field>
 
 		<div id="picture-container">
