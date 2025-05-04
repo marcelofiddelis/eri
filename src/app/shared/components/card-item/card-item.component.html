@@ -1,0 +1,18 @@
+<mat-card appearance="outlined">
+	<mat-card-header>
+		<div [ngClass]="{ 'status-retirado': itemData.status === 'Retirado', 'status-aguardando-retirada': itemData.status === 'Aguardando retirada' }">
+			<h4>{{ itemData.status }}</h4>
+		</div>
+	</mat-card-header>
+
+	<h1>{{ itemData.name }}</h1>
+
+	<div id="item-picture">
+		<img mat-card-image [src]="itemData.picture" alt="Item photo">
+	</div>
+
+	<mat-card-footer>
+		<span>Encontrado em: <b>{{ itemData.findAt }}</b></span>
+		<span>{{ itemData.date | date:"dd/MM/YYYY" }}</span>
+	</mat-card-footer>
+</mat-card>

@@ -1,0 +1,8 @@
+mat-form-field {
+	width: 100%;
+}
+
+mat-form-field.search-input {
+	--mdc-outlined-text-field-focus-outline-width: 1px;
+	--mdc-outlined-text-field-focus-outline-color: none;
+}

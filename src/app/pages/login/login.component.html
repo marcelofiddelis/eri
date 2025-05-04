@@ -1,0 +1,42 @@
+<div class="page-container">
+	<div class="page-left-side">
+		<h1>E.R.I.</h1>
+
+		<img src="/imgs/Image-logo.svg" alt="Logo (E.R.I.)">
+
+		<h2>Extensão de Resgate de Itens</h2>
+
+		<h4>Conecte-se rapidamente aos seus objetos perdidos</h4>
+	</div>
+
+	<div class="page-right-side">
+		<div class="form-container">
+			<h1>Entrar</h1>
+
+			<form [formGroup]="pageForm" (ngSubmit)="onSubmit()">
+				<mat-form-field appearance="outline" floatLabel="always">
+					<mat-label>Matrícula</mat-label>
+					<input matInput formControlName="matricula" placeholder="Sua matrícula">
+					<mat-icon matPrefix>person_outline</mat-icon>
+				</mat-form-field>
+	
+				<mat-form-field appearance="outline" floatLabel="always">
+					<mat-label>Senha</mat-label>
+					<input matInput [type]="hide() ? 'password' : 'text'" formControlName="senha" placeholder="Sua senha" />
+					<mat-icon matPrefix>password</mat-icon>
+					<button
+						mat-icon-button
+						  matSuffix
+						  (click)="togglePasswordIcon($event)"
+						  [attr.aria-label]="'Hide password'"
+						  [attr.aria-pressed]="hide()"
+					>
+						<mat-icon>{{ hide() ? 'visibility_off' : 'visibility'}}</mat-icon>
+					</button>
+				</mat-form-field>
+
+				<button mat-flat-button [disabled]="pageForm.invalid" type="submit" class="primary">Acessar</button>
+			</form>
+		</div>
+	</div>
+</div>

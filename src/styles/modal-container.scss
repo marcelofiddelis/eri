@@ -1,0 +1,11 @@
+.modal-medium-size-container {
+	--mat-dialog-container-max-width: 50vw;
+	--mat-dialog-container-min-width: 50vw;
+	// width: 80vw;
+	// min-width: 80vw;
+	// max-width: 80vw;
+
+	height: fit-content;
+	min-height: fit-content;
+	max-height: fit-content;
+}

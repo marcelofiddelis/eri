@@ -1,0 +1,34 @@
+div#side-menu {
+	width: 100%;
+	height: 100%;
+
+	overflow: hidden;
+
+	padding: 32px;
+
+	background-color: #212121;
+
+	img {
+		width: 100%;
+
+		margin-bottom: 3rem;
+	}
+
+	mat-list {
+		overflow-y: auto;
+
+		padding: 0;
+
+		mat-icon {
+			--mdc-list-list-item-leading-icon-color: #CACACA;
+		}
+
+		mat-list-item {
+			--mdc-list-list-item-label-text-color: #CACACA;
+
+			cursor: pointer;
+
+			border-bottom: 1px solid #403F3F;
+		}
+	}
+}

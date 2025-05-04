@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+// mat-form-field
+@import "./styles/customs/mat-form-field.scss";
+// mat-button
+@import "./styles/customs/mat-button.scss";
+
+// modal-container
+@import "./styles/modal-container.scss";
+
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+}

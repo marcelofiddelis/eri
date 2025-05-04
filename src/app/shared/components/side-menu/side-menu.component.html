@@ -1,0 +1,17 @@
+<!-- <mat-drawer-container class="example-container">
+	<mat-drawer mode="side" opened>Drawer content</mat-drawer>
+	<mat-drawer-content>Main content</mat-drawer-content>
+</mat-drawer-container> -->
+
+<div id="side-menu">
+	<img src="/imgs/LogoAndText.svg" alt="Side menu logo">
+
+	<mat-list>
+		@for (menuOption of sideMenuOptions; track $index) {
+			<mat-list-item (click)="menuOption.function()">
+				<mat-icon matListItemIcon>{{ menuOption.icon }}</mat-icon>
+				<div matListItemTitle>{{ menuOption.label }}</div>
+			</mat-list-item>
+		}
+	</mat-list>
+</div>

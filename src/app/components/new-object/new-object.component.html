@@ -1,0 +1,44 @@
+<div mat-dialog-title>
+	<h2>Registar novo objeto</h2>
+	<mat-icon (click)="onClickCloseComponent()">close</mat-icon>
+</div>
+
+<mat-dialog-content class="mat-typography">
+	<form [formGroup]="componentForm">
+		<mat-form-field appearance="outline" floatLabel="always">
+			<mat-label>Objeto</mat-label>
+			<input matInput formControlName="name" placeholder="Insira o nome do objeto encontrado">
+			<mat-icon matPrefix>person_outline</mat-icon>
+		</mat-form-field>
+
+		<mat-form-field appearance="outline" floatLabel="always">
+			<mat-label>Local</mat-label>
+			<mat-select formControlName="findAt" placeholder="Insira o local no qual o objeto foi encontrado">
+				@for (local of locationsList; track local.label) {
+					<mat-option [value]="local.value">{{ local.label }}</mat-option>
+				}
+			</mat-select>
+			<mat-icon matPrefix>person_outline</mat-icon>
+		</mat-form-field>
+
+		<div id="picture-container">
+			@if (pictureSelected) {
+				<div class="active-picture">
+					<img (click)="itemPicture.click(); itemPicture.value === '';" [src]="pictureSelected" alt="Item picture">
+				</div>
+			} @else {
+				<div class="no-picture">
+					<img (click)="itemPicture.click(); itemPicture.value === '';" src="/imgs/image-placeholder.png" alt="Item picture">
+					<h4>Clique no icone para subir sua imagem</h4>
+				</div>
+			}
+
+			<input (change)="onChangeItemPicture($event)" hidden type="file" accept="image/*" multiple #itemPicture />
+		</div>
+	</form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+	<button (click)="onClickCloseComponent()" mat-flat-button type="button" class="cancel">Cancelar</button>
+	<button (click)="onSubmit()" mat-flat-button [disabled]="componentForm.invalid || !pictureSelected" type="submit" class="primary">Registrar</button>
+</mat-dialog-actions>

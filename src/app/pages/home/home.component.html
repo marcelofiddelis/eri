@@ -1,0 +1,25 @@
+<div class="page-container">
+	<div class="side-menu">
+		<app-side-menu></app-side-menu>
+	</div>
+
+	<main>
+		<div class="header-action-buttons">
+			<button (click)="onClickNovoObjeto()" mat-flat-button type="button" class="primary">Novo objeto</button>
+		</div>
+
+		<div class="main-content">
+			<!-- Search -->
+			<mat-form-field appearance="outline" class="search-input">
+				<input (input)="onFilter($event)" matInput placeholder="Pesquise objetos perdidos ou encontrados">
+				<mat-icon matPrefix>search</mat-icon>
+			</mat-form-field>
+
+			<div class="card-list">
+				@for (item of itemList; track $index) {
+					<app-card-item [itemData]="item"></app-card-item>
+				}
+			</div>
+		</div>
+	</main>
+</div>
